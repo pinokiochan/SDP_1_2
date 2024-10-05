@@ -1,0 +1,28 @@
+Project Structure:
+
+PaymentMethod (interface): Defines the method processPayment() to be implemented by all payment methods.
+CreditCardPayment, PayPalPayment, BankTransferPayment: These classes implement PaymentMethod and handle payments for their specific methods.
+PaymentProcessor: Processes payments by interacting with the PaymentMethod interface, allowing for different payment methods to be used interchangeably.
+Main: The entry point for testing the system with different payment methods.
+
+Key Objectives:
+
+Implement a flexible payment processing system that supports multiple payment methods.
+Apply the SOLID design principles to ensure the system is well-structured, easy to maintain, and extendable.
+Allow the addition of new payment methods (e.g., Bank Transfer) without modifying existing code, following the Open/Closed Principle.
+
+SOLID Principles Applied:
+
+Single Responsibility Principle (SRP): Each class in the system has a single, well-defined responsibility:
+
+CreditCardPayment, PayPalPayment, and BankTransferPayment are responsible for handling their respective payment methods.
+PaymentProcessor is responsible for managing the payment process, irrespective of the payment method used.
+Open/Closed Principle (OCP): The system is designed to be open for extension but closed for modification. This means that adding new payment methods (e.g., BankTransferPayment) does not require modifying existing code. All new methods can be integrated by creating a new class that implements the PaymentMethod interface.
+
+Liskov Substitution Principle (LSP): Any class that implements the PaymentMethod interface can be substituted without altering the correctness of the program. The PaymentProcessor can work seamlessly with any payment method that adheres to the PaymentMethod interface.
+
+Interface Segregation Principle (ISP): The PaymentMethod interface contains only one relevant method, processPayment(), ensuring that payment classes are not forced to implement methods they do not need. This keeps the interface simple and focused.
+
+Dependency Inversion Principle (DIP): The PaymentProcessor depends on the abstract PaymentMethod interface rather than concrete implementations. This ensures loose coupling, allowing the system to work with any payment method that implements the PaymentMethod interface.
+
+Conclusion: The payment processing system demonstrates the use of SOLID principles to create a flexible, maintainable, and extensible application. The system can easily be extended with new payment methods without modifying the existing functionality, ensuring scalability and long-term sustainability.

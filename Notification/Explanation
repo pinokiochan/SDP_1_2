@@ -1,0 +1,14 @@
+Project: Notification System Using SOLID Principles
+
+Key Objectives:
+
+Create a unified notification system where each notification type (SMS, Email, Push Notification) follows a consistent interface.
+Ensure the system can easily be extended with new notification types (e.g., Slack) without modifying existing functionality.
+Implement a flexible solution that allows for sending bulk notifications to multiple recipients.
+
+Project Structure:
+
+Notification (interface): Defines the send() method, which all notification types must implement.
+SMSNotification, EmailNotification, PushNotification: Concrete implementations of the Notification interface, each responsible for sending notifications via a specific channel.
+NotificationService: Responsible for sending notifications, either individually or in bulk, by using any class that implements the Notification interface.
+Factory Method: Centralizes the creation of notification objects.

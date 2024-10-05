@@ -1,0 +1,7 @@
+Explanation of the Design:
+Document Interface: Represents the product (Document) that different types of documents (PDF, Word) must implement.
+Concrete Document Classes: PDFDocument and WordDocument are concrete implementations of the Document interface. Each has its own logic for the creation of that specific document.
+Factory Method: The DocumentFactory defines the createDocument() method, which is overridden by specific document factories like PDFDocumentFactory and WordDocumentFactory.
+Concrete Factories: Each concrete factory is responsible for creating a specific type of document, adhering to the Factory Method pattern.
+Why the Factory Method?
+The Factory Method allows for the creation of different document types without altering existing code. If you need to add new document types, such as ExcelDocument or PowerPointDocument, you just need to add a new class that implements the Document interface and create a corresponding factory. The existing code remains untouched, satisfying the Open/Closed Principle.
